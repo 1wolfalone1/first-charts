@@ -1,0 +1,19 @@
+# Default values for mynginx.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+port: 80
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  externalPort: 80
+  internalPort: 80
+  name: nginx-clus-port
